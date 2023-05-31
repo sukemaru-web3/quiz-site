@@ -1,9 +1,19 @@
-import { useState } from "react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const puzzleSize = 4;
 
 export default function Home() {
   const [board, setBoard] = useState(getShuffledBoard());
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    if (checkCompletion(board)) {
+      setIsComplete(true);
+    } else {
+      setIsComplete(false);
+    }
+  }, [board]);
 
   function getShuffledBoard() {
     const numbers = Array.from(
@@ -38,6 +48,15 @@ export default function Home() {
     );
   }
 
+  function checkCompletion(board) {
+    for (let i = 0; i < board.length - 1; i++) {
+      if (board[i] !== i + 1) {
+        return false;
+      }
+    }
+    return board[board.length - 1] === null;
+  }
+
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold mb-4">Slide Puzzle</h1>
@@ -54,6 +73,18 @@ export default function Home() {
           </div>
         ))}
       </div>
+      {isComplete && (
+        <div>
+          <p className="text-2xl mt-4">完成！</p>
+
+          <Link
+            href="https://nookin.net/"
+            className="px-6 py-3 bg-gray-500 text-white rounded-full text-xl shadow-md mt-4 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-600"
+          >
+            戻る
+          </Link>
+        </div>
+      )}
       <style jsx>{`
         .container {
           display: flex;

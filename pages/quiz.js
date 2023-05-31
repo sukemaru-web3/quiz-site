@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 
 const QuizPage = () => {
@@ -70,6 +71,12 @@ const QuizPage = () => {
       <div className="bg-pink-200 flex flex-col items-center justify-center h-screen">
         <h1 className="text-4xl font-bold mb-4">Quiz Completed!</h1>
         <p className="text-lg text-gray-700 mb-6">Your score: {score}</p>
+        <Link
+          href="https://nookin.net/"
+          className="px-6 py-3 bg-gray-500 text-white rounded-full text-xl shadow-md mt-4 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-600"
+        >
+          戻る
+        </Link>
       </div>
     );
   }

@@ -3,27 +3,29 @@ import Link from "next/link";
 const HomePage = () => {
   return (
     <div className="bg-pink-200 flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold mb-4">Welcome to the Quiz Site!</h1>
+      <h1 className="text-4xl font-bold mb-4">
+        Welcome to the mini game page!
+      </h1>
       <p className="text-lg text-gray-700 mb-6">
-        Click the button below to start the quiz.
+        Click the button below to start the game.
       </p>
       <Link
         href="/quiz"
-        className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+        className="bg-pink-500 text-white px-4 py-2 mb-3 rounded hover:bg-pink-600"
       >
-        Start Quiz
+        ヌークイズ
       </Link>
       <Link
         href="/slidePuzzle"
-        className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+        className="bg-pink-500 text-white px-4 py-2  mb-3 rounded hover:bg-pink-600"
       >
-        slidePuzzle
+        スライドパズル
       </Link>
       <Link
-        href="/quiz"
-        className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+        href="/timeStop"
+        className="bg-pink-500 text-white px-4 py-2  mb-3 rounded hover:bg-pink-600"
       >
-        Start Quiz
+        10秒ぴったりゲーム
       </Link>
     </div>
   );
