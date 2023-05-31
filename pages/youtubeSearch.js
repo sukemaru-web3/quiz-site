@@ -62,11 +62,11 @@ export default function YouTubeSearchApp() {
                 rel="noopener noreferrer"
                 className="flex items-center p-4"
               >
-                <img
+                {/* <img
                   src={video.snippet.thumbnails.default.url}
                   alt={video.snippet.title}
                   className="w-24 h-24 object-cover mr-4"
-                />
+                /> */}
                 <div>
                   <p className="text-lg font-medium text-gray-900 mb-2">
                     {video.snippet.title}
