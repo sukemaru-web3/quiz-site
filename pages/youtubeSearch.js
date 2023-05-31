@@ -27,7 +27,7 @@ export default function YouTubeSearchApp() {
   };
 
   return (
-    <div className="container mx-auto h-screen flex justify-center items-center">
+    <div className="container mx-auto h-auto flex justify-center items-center">
       <div className="text-center">
         <h1 className="text-3xl font-bold mb-8">YouTube Video Search</h1>
         <div className="flex items-center justify-center mb-8">
