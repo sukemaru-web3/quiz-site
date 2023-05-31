@@ -54,19 +54,20 @@ export default function YouTubeSearchApp() {
           {videos.map((video) => (
             <div
               key={video.id.videoId}
-              className="bg-white rounded overflow-hidden shadow-lg"
+              className="bg-white rounded overflow-hidden shadow-lg mb-4"
             >
               <a
                 href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center p-4"
               >
                 <img
                   src={video.snippet.thumbnails.default.url}
                   alt={video.snippet.title}
-                  className="w-900 h-600  object-cover"
+                  className="w-24 h-24 object-cover mr-4"
                 />
-                <div className="p-4">
+                <div>
                   <p className="text-lg font-medium text-gray-900 mb-2">
                     {video.snippet.title}
                   </p>
