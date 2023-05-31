@@ -60,6 +60,8 @@ export default function Home() {
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold mb-4">Slide Puzzle</h1>
+      <p>数字をタッチすると移動するよ</p>
+      <p>上から順に1～4、5～8、9～12、13～15、右下のマスが空欄になればOK</p>
       <div className="grid grid-cols-4 gap-4 w-80">
         {board.map((value, index) => (
           <div
