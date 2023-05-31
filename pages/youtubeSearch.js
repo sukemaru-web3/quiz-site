@@ -36,16 +36,14 @@ export default function YouTubeSearchApp() {
             className="flex items-center justify-center mb-8"
           >
             <input
+              id="keyword"
               type="text"
               value={keyword}
               onChange={handleKeywordChange}
               className="border border-gray-400 rounded py-2 px-4 mr-2 w-64"
               placeholder="Enter keyword"
             />
-            <button
-              type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
+            <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
               Search
             </button>
           </form>
@@ -62,11 +60,11 @@ export default function YouTubeSearchApp() {
                 rel="noopener noreferrer"
                 className="flex items-center p-4"
               >
-                {/* <img
+                <img
                   src={video.snippet.thumbnails.default.url}
                   alt={video.snippet.title}
                   className="w-24 h-24 object-cover mr-4"
-                /> */}
+                />
                 <div>
                   <p className="text-lg font-medium text-gray-900 mb-2">
                     {video.snippet.title}
