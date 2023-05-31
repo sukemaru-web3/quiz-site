@@ -21,33 +21,59 @@ export default function YouTubeSearchApp() {
     }
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    searchVideos();
+  };
+
   return (
     <div className="container mx-auto h-screen flex justify-center items-center">
       <div className="text-center">
-        <h1 className="text-3xl font-bold mb-4">YouTube Video Search</h1>
-        <input
-          type="text"
-          value={keyword}
-          onChange={handleKeywordChange}
-          className="border border-gray-400 rounded py-2 px-4 mb-4"
-          placeholder="Enter keyword"
-        />
-        <button
-          onClick={searchVideos}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Search
-        </button>
-        <div className="mt-8">
+        <h1 className="text-3xl font-bold mb-8">YouTube Video Search</h1>
+        <div className="flex items-center justify-center mb-8">
+          <form
+            onSubmit={handleFormSubmit}
+            className="flex items-center justify-center mb-8"
+          >
+            <input
+              type="text"
+              value={keyword}
+              onChange={handleKeywordChange}
+              className="border border-gray-400 rounded py-2 px-4 mr-2 w-64"
+              placeholder="Enter keyword"
+            />
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {videos.map((video) => (
-            <div key={video.id.videoId} className="mb-4">
+            <div
+              key={video.id.videoId}
+              className="bg-white rounded overflow-hidden shadow-lg"
+            >
               <a
                 href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 hover:underline"
               >
-                {video.snippet.title}
+                <img
+                  src={video.snippet.thumbnails.default.url}
+                  alt={video.snippet.title}
+                  className="w-900 h-600  object-cover"
+                />
+                <div className="p-4">
+                  <p className="text-lg font-medium text-gray-900 mb-2">
+                    {video.snippet.title}
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    {video.snippet.channelTitle}
+                  </p>
+                </div>
               </a>
             </div>
           ))}
