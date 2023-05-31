@@ -7,10 +7,23 @@ const HomePage = () => {
       <p className="text-lg text-gray-700 mb-6">
         Click the button below to start the quiz.
       </p>
-      <Link href="/quiz">
-        <a className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">
-          Start Quiz
-        </a>
+      <Link
+        href="/quiz"
+        className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+      >
+        Start Quiz
+      </Link>
+      <Link
+        href="/slidePuzzle"
+        className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+      >
+        slidePuzzle
+      </Link>
+      <Link
+        href="/quiz"
+        className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+      >
+        Start Quiz
       </Link>
     </div>
   );
