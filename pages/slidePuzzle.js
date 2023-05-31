@@ -4,7 +4,6 @@ const puzzleSize = 4;
 
 export default function Home() {
   const [board, setBoard] = useState(getShuffledBoard());
-  const [selectedPiece, setSelectedPiece] = useState(null);
 
   function getShuffledBoard() {
     const numbers = Array.from(
@@ -22,17 +21,10 @@ export default function Home() {
       newBoard[nullIndex] = newBoard[index];
       newBoard[index] = null;
       setBoard(newBoard);
-      setSelectedPiece(null);
-    } else {
-      setSelectedPiece(index);
     }
   }
 
   function canMove(index) {
-    if (selectedPiece === null) {
-      return false;
-    }
-
     const nullIndex = board.indexOf(null);
     const row = Math.floor(nullIndex / puzzleSize);
     const col = nullIndex % puzzleSize;
@@ -55,7 +47,7 @@ export default function Home() {
             key={index}
             className={`p-4 flex justify-center items-center bg-lightblue cursor-pointer ${
               value === null ? "bg-white cursor-default" : ""
-            } ${selectedPiece === index ? "border-4 border-blue-600" : ""}`}
+            }`}
             onClick={() => handleClick(index)}
           >
             {value}
